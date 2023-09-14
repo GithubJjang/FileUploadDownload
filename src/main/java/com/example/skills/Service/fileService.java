@@ -2,6 +2,7 @@ package com.example.skills.Service;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -57,10 +58,5 @@ public class fileService {
         FileEntity savedFile = fileRepository.save(file);
 
         return savedFile.getId();
-		
-		
-		
-		
 	}
-
 }
