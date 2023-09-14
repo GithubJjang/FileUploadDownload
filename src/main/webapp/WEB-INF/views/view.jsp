@@ -7,15 +7,11 @@
     <title>Title</title>
 </head>
 <body>
-    <!--
-    <h3>이미지 출력</h3>
-    <div th:each="imageFile : ${all} ">
-        <img  th:src="|/images/${imageFile.id}|" width="150" height="150">
-        <p th:text="${imageFile.orgNm}"></p>
-    </div>
-    -->
+ 
     <h3>파일 다운로드</h3>
     <c:forEach var="file" items="${all}">
+        ${file.savedNm}
+        <img src="/img/${file.savedNm}" width="150" height="150" />
         <a href="/attach/${file.id}">${file.orgNm}</a> <br>
     </c:forEach>
     <!--

@@ -52,6 +52,10 @@ public class fileController {
 	@PostMapping("/upload")
 	public String uploadFile(@RequestParam("file") MultipartFile file,@RequestParam("files") List<MultipartFile> files) throws IllegalStateException, IOException {
 		
+		for(MultipartFile mp: files) {
+			System.out.println(mp.getName());
+		}
+		
 		// 1. 넘어온 파일에 UUID를 부여해서 DB에 저장을 하고,
 		// 2. 선택된 경로에 저장을 한다.
 		fileService.saveFile(file);
